@@ -27,7 +27,7 @@ public class CommandLineController {
     }
 	
 	@RequestMapping(value = "/getAllAchats", method = RequestMethod.GET, produces = "application/json")
-	public List<CommandLine> getAchats(@PathVariable int idorder) {
+	public List<CommandLine> getCommandLines(@PathVariable int idorder) {
 		
 		List<CommandLine> listOfAchats = achatService.getAllCommandLines(idorder);
 		achatService.calculeTotal(listOfAchats);
@@ -41,7 +41,7 @@ public class CommandLineController {
 	}
 
 	@RequestMapping(value = "/addAchat", method = RequestMethod.POST, headers = "Accept=application/json")
-	public String addAchat(@ModelAttribute("achat") CommandLine achat) {	
+	public String addCommandLine(@ModelAttribute("achat") CommandLine achat) {	
 		if(achat.getNumLigne()==0)
 		{
 			achatService.addCommandLine(achat);

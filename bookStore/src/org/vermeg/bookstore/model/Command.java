@@ -21,17 +21,17 @@ public class Command {
 	@Id
 	@Column(name="orderid")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long numDocAchat;
+	private static long numDocAchat;
 	@Column(name="orderdate")
 	private String DateAchat;
-	@OneToMany(mappedBy = "documentAchat", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "command", cascade = CascadeType.ALL)
     private List<CommandLine> achat;
 	@ManyToOne(fetch= FetchType.LAZY)
 	@JoinColumn(name="userid")
 	private User utilisateur;
 	
 	
-	public long getId() {
+	public static long getId() {
 		return numDocAchat;
 	}
 	public void setId(long id) {
@@ -61,7 +61,7 @@ public class Command {
 	}
 	@Override
 	public String toString() {
-		return utilisateur.toString() + "DocumentAchat [ id=" + numDocAchat + ", DateAchat=" + DateAchat + "]";
+		return utilisateur.toString() + "command [ id=" + numDocAchat + ", DateAchat=" + DateAchat + "]";
 	}
 	
 	

@@ -54,10 +54,10 @@ public class CommandLine {
 	public void setLivre(Book livre) {
 		this.livre = livre;
 	}
-	public Command getDocumentAchat() {
+	public Command getCommand() {
 		return c;
 	}
-	public void setDocumentAchat(Command c) {
+	public void setCommand(Command c) {
 		this.c = c;
 	}
 	

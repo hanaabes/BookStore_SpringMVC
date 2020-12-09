@@ -35,7 +35,7 @@ public class CommandController {
 	}
 
 	@RequestMapping(value = "/getCommand/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
-	public Command getDocumentAchatById(@PathVariable int id) {
+	public Command getCommandById(@PathVariable int id) {
 		return cService.getCommand(id);
 	}
 
@@ -68,7 +68,7 @@ public class CommandController {
 	}
 
 	@RequestMapping(value = "/deleteCommand/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
-	public String deleteDocumentAchat(@PathVariable("id") int id) {
+	public String deleteCommand(@PathVariable("id") int id) {
 		cService.deleteCommand(id);
 		 return "redirect:/getAllCommands";
 
